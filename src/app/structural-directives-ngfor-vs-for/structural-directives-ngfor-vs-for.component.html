@@ -1,0 +1,43 @@
+<div class="row text-center">
+    <div class="col-12 m-3">
+        <h3>Example of *ngFor vs For</h3>
+    </div>
+</div>
+
+<div class="row text-center">
+
+    <div class="col-4">
+         <select name="" id="" class="p-2">
+            <option [value]="emp.empNumber" *ngFor="let emp of employees">
+               {{emp.empName}} - {{emp.empEmail}}
+            </option>
+         </select>
+    </div>
+    <div class="col-6">
+          <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Emails</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employees">
+                   <td>{{emp.empName}}</td>
+                   <td>{{emp.empNumber}}</td>
+                   <td>{{emp.empEmail}}</td>
+                   <td>{{emp.emDept}}</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="col-2">
+        <ol>
+            <li *ngFor="let company of companyList">
+               {{company}}
+            </li>
+        </ol>
+    </div>
+</div>
