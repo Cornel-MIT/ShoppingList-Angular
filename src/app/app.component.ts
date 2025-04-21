@@ -5,6 +5,9 @@ import { DataBindingComponent } from "./data-binding/data-binding.component";
 import { DirectivesComponent } from "./directives/directives.component";
 import { StructuralDirectivesNgifVsIfComponent } from "./structural-directives-ngif-vs-if/structural-directives-ngif-vs-if.component";
 import { StructuralDirectivesNgforVsForComponent } from "./structural-directives-ngfor-vs-for/structural-directives-ngfor-vs-for.component";
+import { StructuralDirectivesNgswitchVsSwitchComponent } from "./structural-directives-ngswitch-vs-switch/structural-directives-ngswitch-vs-switch.component";
+import { AttributeDirectivesComponent } from "./attribute-directives/attribute-directives.component";
+import { SignalsComponent } from "./signals/signals.component";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +17,10 @@ import { StructuralDirectivesNgforVsForComponent } from "./structural-directives
     DataBindingComponent,
     DirectivesComponent,
     StructuralDirectivesNgifVsIfComponent,
-    StructuralDirectivesNgforVsForComponent
+    StructuralDirectivesNgforVsForComponent,
+    StructuralDirectivesNgswitchVsSwitchComponent,
+    AttributeDirectivesComponent,
+    SignalsComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

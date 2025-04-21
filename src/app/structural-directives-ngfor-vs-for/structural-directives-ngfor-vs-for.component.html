@@ -8,9 +8,14 @@
 
     <div class="col-4">
          <select name="" id="" class="p-2">
-            <option [value]="emp.empNumber" *ngFor="let emp of employees">
+            <!-- <option [value]="emp.empNumber" *ngFor="let emp of employees">
                {{emp.empName}} - {{emp.empEmail}}
-            </option>
+            </option> -->
+            @for (emp of employees; track emp;) {
+                <option [value]="emp.empNumber">
+                    {{emp.empName}} - {{emp.empNumber}}
+                </option>
+            }
          </select>
     </div>
     <div class="col-6">
@@ -24,20 +29,48 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let emp of employees">
+                <!-- <tr *ngFor="let emp of employees">
                    <td>{{emp.empName}}</td>
                    <td>{{emp.empNumber}}</td>
                    <td>{{emp.empEmail}}</td>
                    <td>{{emp.emDept}}</td>
-                </tr>
+                </tr> -->
+                @for (emp of employees; track emp;) {
+                   <tr>
+                      <td>{{emp.empName}}</td>
+                      <td>{{emp.empNumber}}</td>
+                      <td>{{emp.empEmail}}</td>
+                      <td>{{emp.emDept}}</td>
+                   </tr>
+                }
             </tbody>
           </table>
     </div>
     <div class="col-2">
         <ol>
-            <li *ngFor="let company of companyList">
+            <!-- <li *ngFor="let company of companyList">
                {{company}}
-            </li>
+            </li> -->
+            @for (company of companyList; track company;) {
+                <li>
+                    {{company}}
+                 </li>
+            }
         </ol>
+    </div>
+    <div class="col-2">
+        <div>
+            <div *ngFor="let company of companyList">
+               {{company}}
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+       <button class="btn btn-primary m-1" *ngFor="let company of companyList">
+        {{company}}
+    </button>
+    </div>
+    <div class="col-4">
+
     </div>
 </div>

@@ -16,5 +16,5 @@ export class StructuralDirectivesNgforVsForComponent {
       {empName: "Robin", empNumber: 105, empEmail: "DemonChild@gmail.com", emDept:"Explorer"}
    ]
 
-   companyList : string[] = ["Amazon", "Google", "Apple", "Microsoft"]
+   companyList : string[] = ["Amazon", "Google", "Apple", "Microsoft", "Netflix", "Tesla"]
 }
