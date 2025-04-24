@@ -22,7 +22,7 @@
         <div class="form-group m-2">
             <label >Last Name</label>
             <input type="text" class="form-control" placeholder="Enter last name" #lname="ngModel" name="lastName" [(ngModel)]="userObject.lastName" required>
-            @if (lname?.dirty || fname?.touched) {
+            @if (lname?.dirty || lname?.touched) {
 
                 @if (lname?.errors?.['required']) {
                     <small class="text-danger">Lastname is required</small>
@@ -31,7 +31,13 @@
           </div>  
         <div class="form-group m-2">
             <label >Email</label>
-            <input type="email" class="form-control" placeholder="Enter email address" name="emailAddress" [(ngModel)]="userObject.emailAddress" email required>
+            <input type="email" class="form-control" placeholder="Enter email address" #emailid="ngModel" name="emailAddress" [(ngModel)]="userObject.emailAddress" email required>
+            @if (emailid?.dirty || emailid?.touched) {
+
+                @if (emailid?.errors?.['required']) {
+                    <small class="text-danger">Email address is required</small>
+                }
+            }
           </div>
         <div class="form-group m-2">
             <label >Password</label>
