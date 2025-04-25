@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -10,21 +10,27 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class ReactiveFormComponent {
   reactiveForm : FormGroup;
   
-  constructor() {
-    this.reactiveForm = new FormGroup({
-      firstName : new FormControl(""),
-        lastName : new FormControl(""),
-        email : new FormControl(""),
-        password : new FormControl(),
-        isChecked : new FormControl(),
+  constructor(private fb : FormBuilder) {
+    this.reactiveForm = this.fb.group({
+      firstName : [''],
+        lastName : [''],
+        email : [''],
+        password : [''],
+        isChecked : [''],
         
-        address : new FormGroup({
-           city: new FormControl(""),
-           street: new FormControl(""),
+        address : this.fb.group({
+           city: [''],
+           street: [''],
            pincode: new FormControl()
-        })
+        }),
+        
+        skills : this.fb.array([])
         
       }) 
+      }
+
+      get skills() : FormArray {
+         return this.reactiveForm.get("skills") as FormArray
       }
 
       onSubmit() {
