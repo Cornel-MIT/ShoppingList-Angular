@@ -9,7 +9,7 @@
         <h2 class="text-center m-2">Reactive Form : User Information</h2>
         <div class="form-group m-2">
             <label >First Name</label>
-            <input type="text" class="form-control" placeholder="Enter first name" formControlName="firstName" required>
+            <input type="text" class="form-control" placeholder="Enter first name" formControlName="firstName">
 
           </div> 
         <div class="form-group m-2">
@@ -27,6 +27,18 @@
         <div class="form-check m-2">
             <input type="checkbox" class="form-check-input" formControlName="isChecked">
             <label>Check me Out</label>
+          </div>
+
+          <div class="form-group m-2" formArrayName="skills">
+              <button class="btn btn-primary" (click)="addSkill()">Add Skill</button>
+
+              <div *ngFor="let Skill of skills.controls; let i = index">
+                <div [formGroupName]="i">
+                    {{i+1}} skill name : <input type="text" formControlName="skill">
+                    <button (click)="deleteSkill(i)">Delete</button>
+                </div>
+
+              </div>
           </div>
 
           <div class="m-2" formGroupName="address">
