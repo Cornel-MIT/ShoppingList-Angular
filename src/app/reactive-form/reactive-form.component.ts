@@ -58,7 +58,7 @@ export class ReactiveFormComponent {
           firstName : "Winnie",
           lastName : "Pooe",
           email : "wiinie@gmail.com",
-          password : "P1p1p2",
+          password : " ",
           isChecked : true,
           address : {
             city : "Pretoria",
