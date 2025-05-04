@@ -8,6 +8,7 @@ import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CRUDComponent } from './crud/crud.component';
 
 export const routes: Routes = [
     // {path : '', component: UserComponent},
@@ -20,5 +21,6 @@ export const routes: Routes = [
     {path : 'TDF', component: TemplateDrivenFormComponent},
     {path : 'reactive-form', component: ReactiveFormComponent},
     {path : 'profile', component: ProfileComponent},
+    {path : 'crud', component: CRUDComponent},
     {path : '**', component: PageNotFoundComponent}
 ];
