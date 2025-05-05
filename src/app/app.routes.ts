@@ -12,6 +12,7 @@ import { CRUDComponent } from './crud/crud.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { ResourceApiComponent } from './resource-api/resource-api.component';
 
 export const routes: Routes = [
     // {path : '', component: UserComponent},
@@ -28,5 +29,6 @@ export const routes: Routes = [
     {path : 'addUser', component: AddUserComponent},
     {path : 'viewUser/:id', component: ViewUserComponent},
     {path : 'updateUser/:id', component: UpdateUserComponent},
+    {path : 'resourceapi', component: ResourceApiComponent},
     {path : '**', component: PageNotFoundComponent}
 ];

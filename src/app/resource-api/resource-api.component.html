@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="text-center m-4">
+        Resource & rxResources API
+    </h2>
+    <table class="table table-info table-striped">
+        <thead>
+            <tr>
+               <th class="col-2">Usser_ID</th>
+               <th class="col-2">Username</th>
+               <th class="col-3">Email</th>
+               <th class="col-2">Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of apiData">
+                <td>{{data.user_id}}</td>
+                <td>{{data.username}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.password}}</td>
+                <td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
