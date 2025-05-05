@@ -19,9 +19,13 @@ export class ResourceApiComponent implements OnInit{
     }
 
     getData() {
-      this.resource.getAllData().subscribe(res => {
-        this.apiData = res;
-      })
+      // this.resource.getAllData().subscribe(res => {
+      //   this.apiData = res;
+      // })
+
+      // this.apiData = this.resource.rxResourceData;
+
+      this.apiData = this.resource.resourceData;
     }
 
 }

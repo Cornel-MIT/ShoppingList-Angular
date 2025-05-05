@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let data of apiData">
+            <tr *ngFor="let data of apiData.value()">
                 <td>{{data.user_id}}</td>
                 <td>{{data.username}}</td>
                 <td>{{data.email}}</td>
