@@ -4,16 +4,18 @@ import { ReactiveFormComponent } from '../reactive-form/reactive-form.component'
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CrudService } from '../crud.service';
+import { ReusableComponent } from "../reusable/reusable.component";
 
 @Component({
   selector: 'app-add-user',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ReusableComponent],
   templateUrl: './add-user.component.html',
   styleUrl: './add-user.component.scss'
 })
 export class AddUserComponent {
   
   addUserForm : FormGroup;
+  parentProperty: string = "Create a New User...";
   
   constructor(private route : Router, private fb : FormBuilder, private crud : CrudService) {
     
