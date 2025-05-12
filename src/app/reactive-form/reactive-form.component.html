@@ -1,0 +1,65 @@
+<div class="container">
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+        <!-- <pre>Value : {{userForm.value | json}}</pre>
+        <pre>valid : {{userForm.valid}}</pre>
+        <pre>invalid : {{userForm.invalid}}</pre>
+        <pre>touched : {{userForm.touched}}</pre>
+        <pre>untouched : {{userForm.untouched}}</pre>
+        <pre>submitted : {{userForm.submitted}}</pre> -->
+        <h2 class="text-center m-2">Reactive Form : User Information</h2>
+        <div class="form-group m-2">
+            <label >First Name</label>
+            <input type="text" class="form-control" placeholder="Enter first name" formControlName="firstName">
+
+          </div> 
+        <div class="form-group m-2">
+            <label >Last Name</label>
+            <input type="text" class="form-control" placeholder="Enter last name" formControlName="lastName">
+          </div>  
+        <div class="form-group m-2">
+            <label >Email</label>
+            <input type="email" class="form-control" placeholder="Enter email address" formControlName="email">
+          </div>
+        <div class="form-group m-2">
+            <label >Password</label>
+            <input type="password" class="form-control" placeholder="Enter password" formControlName="password">
+          </div>
+        <div class="form-check m-2">
+            <input type="checkbox" class="form-check-input" formControlName="isChecked">
+            <label>Check me Out</label>
+          </div>
+
+          <div class="form-group m-2" formArrayName="skills">
+              <button class="btn btn-primary" (click)="addSkill()">Add Skill</button>
+
+              <div *ngFor="let Skill of skills.controls; let i = index">
+                <div [formGroupName]="i">
+                    {{i+1}} skill name : <input type="text" formControlName="skill">
+                    <button (click)="deleteSkill(i)">Delete</button>
+                </div>
+
+              </div>
+          </div>
+
+          <div class="m-2" formGroupName="address">
+              <h5 class="m-2">Address</h5>
+              <div class="form-group m-2">
+                <label >City</label>
+                <input type="text" class="form-control" placeholder="Enter City Name" formControlName="city">
+              </div>
+              <div class="form-group m-2">
+                <label >Street</label>
+                <input type="text" class="form-control" placeholder="Enter Street Address" formControlName="street">
+              </div>
+              <div class="form-group m-2">
+                <label >Pincode</label>
+                <input type="text" class="form-control" placeholder="Enter email address" formControlName="pincode">
+              </div>
+          </div>
+          <button class="btn btn-success m-2" type="submit" [disabled]="reactiveForm.invalid">Submit</button>
+          <button class="btn btn-warning m-2" (click)="setAllValues()">Set All Value</button>
+          <button class="btn btn-primary m-2" (click)="setParialValues()">Set Parial Values</button>
+          <button class="btn btn-secondary m-2" (click)="resetForm()">Reset</button>
+
+    </form>
+</div>
